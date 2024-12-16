@@ -1,0 +1,30 @@
+<launch>
+      <!-- Enable rviz visualization -->
+      <arg name="rviz"        default="true" />
+      
+      <!-- The URDF model of the robot -->
+      <arg name="urdfFile"    value="$(find ymbot_d_description)/urdf/ymbot_d_description.urdf" />
+      <!-- The task file for the mpc. -->
+      <arg name="taskFile"    value="$(find ymbot_ocs2_ws)/config/left_arm.info" />
+      <!-- The library folder to generate CppAD codegen into -->
+      <arg name="libFolder"   value="$(find ymbot_ocs2_ws)/auto" />
+      <param name="taskFile"   value="$(arg taskFile)" />
+      <param name="urdfFile"   value="$(arg urdfFile)" />
+      <param name="libFolder"  value="$(arg libFolder)" />
+      <!-- The rviz configuration file to load. -->
+      <arg name="rvizconfig"  default="$(find ymbot_ocs2_ws)/rviz/rviz.rviz"/>
+
+      <param name="robot_description" command="$(find xacro)/xacro --inorder $(arg urdfFile)"/>
+      <!-- <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" /> -->
+      <node if="$(arg rviz)" name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" output="screen" />
+
+
+      <node pkg="ymbot_ocs2_ws" type="mobile_manipulator_mpc_node" name="mobile_manipulator_mpc_node" 
+            output="screen" launch-prefix="" />
+
+      <node pkg="ymbot_ocs2_ws" type="mobile_manipulator_dummy_mrt_node" name="mobile_manipulator_dummy_mrt_node" 
+            output="screen" launch-prefix="gnome-terminal --" />
+
+      <node pkg="ymbot_ocs2_ws" type="MobileManipulatorVRTarget" name="MobileManipulatorVRTarget" 
+            output="screen" launch-prefix="gnome-terminal --" />
+</launch>
