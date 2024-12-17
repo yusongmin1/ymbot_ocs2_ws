@@ -103,7 +103,7 @@ mpc
   debugPrint                      false
 
   mpcDesiredFrequency             50   ; [Hz]
-  mrtDesiredFrequency             50   ; [Hz]
+  mrtDesiredFrequency             200   ; [Hz]
 }
 
 ; initial state
@@ -226,8 +226,36 @@ finalEndEffector
 selfCollision
 { 
   ; activate self-collision constraint
-  activate  false
+  activate  true
+  ; Self Collision raw object pairs
+  collisionObjectPairs
+  {
+  }
 
+  ; Self Collision pairs
+  collisionLinkPairs
+  {
+    [0] "Left_Arm_Link8, base_link"
+    [1] "Left_Arm_Link8,Right_Arm_Link8"
+    [2] "Left_Arm_Link8,Right_Arm_Link7"
+    [3] "Left_Arm_Link7,Right_Arm_Link8"
+    [4] "Left_Arm_Link7,Right_Arm_Link7"
+
+    [5] "Left_Arm_Link8,Body_Link2"
+    [6] "Left_Arm_Link8,Body_Link4"
+
+    [7] "Right_Arm_Link8,Body_Link2"
+    [8] "Right_Arm_Link8,Body_Link4"
+  }
+
+    ; minimum distance allowed between the pairs
+  minimumDistance  0.05
+
+  ; relaxed log barrier mu
+  mu      1e-2
+
+  ; relaxed log barrier delta
+  delta   1e-3
   ; TODO: Replace the collision meshes of the arm with primitive shapes.
 }
 

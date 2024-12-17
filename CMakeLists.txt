@@ -115,17 +115,17 @@ target_link_libraries(mobile_manipulator_dummy_mrt_node
 )
 target_compile_options(mobile_manipulator_dummy_mrt_node PUBLIC ${FLAGS})
 
-# Target node
-add_executable(mobile_manipulator_target
-  src/MobileManipulatorTarget.cpp
-)
-add_dependencies(mobile_manipulator_target
-  ${catkin_EXPORTED_TARGETS}
-)
-target_link_libraries(mobile_manipulator_target
-  ${catkin_LIBRARIES}
-)
-target_compile_options(mobile_manipulator_target PUBLIC ${FLAGS})
+# # Target node
+# add_executable(mobile_manipulator_target
+#   src/MobileManipulatorTarget.cpp
+# )
+# add_dependencies(mobile_manipulator_target
+#   ${catkin_EXPORTED_TARGETS}
+# )
+# target_link_libraries(mobile_manipulator_target
+#   ${catkin_LIBRARIES}
+# )
+# target_compile_options(mobile_manipulator_target PUBLIC ${FLAGS})
 
 # Target node
 add_executable(MobileManipulatorVRTarget
@@ -140,16 +140,7 @@ target_link_libraries(MobileManipulatorVRTarget
 target_compile_options(MobileManipulatorVRTarget PUBLIC ${FLAGS})
 
 
-# Target node
-add_executable(test_new
-  src/test.cpp
-)
-add_dependencies(test_new
-  ${catkin_EXPORTED_TARGETS}
-)
-target_link_libraries(test_new
-  ${catkin_LIBRARIES}
-)
+
 
 add_executable(listen
   src/listen.cpp
@@ -192,7 +183,7 @@ install(
     mobile_manipulator_mpc_node 
     mobile_manipulator_distance_visualization
     mobile_manipulator_dummy_mrt_node 
-    mobile_manipulator_target
+    MobileManipulatorVRTarget
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 install(DIRECTORY launch rviz

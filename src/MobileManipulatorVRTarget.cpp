@@ -137,20 +137,24 @@ int main(int argc, char *argv[])
   ::ros::init(argc, argv, robotName + "_target");
   ::ros::NodeHandle nodeHandle;
     
-  // tf2_ros::Buffer buffer;
-  // tf2_ros::TransformListener listener(buffer);
-  // std::cout<<"开始启动接受VR信号\n";
-  // // geometry_msgs::TransformStamped tfs = buffer.lookupTransform
-  // geometry_msgs::TransformStamped  transformStamped = buffer.lookupTransform("Body_Link1", "world", ros::Time(0));
-  // first_current_pose.header = transformStamped.header;
-  // // geometry_msgs::PoseStamped first_current_pose;
-  // first_current_pose.pose.position.x = transformStamped.transform.translation.x;
-  // first_current_pose.pose.position.y = transformStamped.transform.translation.y;
-  // first_current_pose.pose.position.z = transformStamped.transform.translation.z;
-  // first_current_pose.pose.orientation.x = transformStamped.transform.rotation.x;
-  // first_current_pose.pose.orientation.y = transformStamped.transform.rotation.y;
-  // first_current_pose.pose.orientation.z = transformStamped.transform.rotation.z;
-  // first_current_pose.pose.orientation.w = transformStamped.transform.rotation.w;
+//   tf2_ros::Buffer buffer;
+//   tf2_ros::TransformListener listener(buffer);
+//   std::cout<<"开始启动接受VR信号\n";
+//   // geometry_msgs::TransformStamped tfs = buffer.lookupTransform
+//   geometry_msgs::TransformStamped  transformStamped = buffer.lookupTransform("Body_Link1", "base_link", ros::Time(2));
+  
+  
+//   first_current_pose.header = transformStamped.header;
+//   // geometry_msgs::PoseStamped first_current_pose;
+//   first_current_pose.pose.position.x = transformStamped.transform.translation.x;
+//   first_current_pose.pose.position.y = transformStamped.transform.translation.y;
+//   first_current_pose.pose.position.z = transformStamped.transform.translation.z;
+//   first_current_pose.pose.orientation.x = transformStamped.transform.rotation.x;
+//   first_current_pose.pose.orientation.y = transformStamped.transform.rotation.y;
+//   first_current_pose.pose.orientation.z = transformStamped.transform.rotation.z;
+//   first_current_pose.pose.orientation.w = transformStamped.transform.rotation.w;
+
+
   first_current_pose.pose.position.x = 0.22806;
   first_current_pose.pose.position.y =0.29645;
   first_current_pose.pose.position.z = 0.28248;
@@ -177,3 +181,63 @@ int main(int argc, char *argv[])
   // Successful exit
   return 0;
 }
+
+
+
+
+// #include <ros/ros.h>
+// #include <tf2_ros/transform_listener.h>
+// #include <geometry_msgs/TransformStamped.h>
+// #include <geometry_msgs/PoseStamped.h>
+// #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+
+// int main(int argc, char** argv)
+// {
+//     // 初始化ROS节点
+//     ros::init(argc, argv, "tf2_listener_example");
+//     ros::NodeHandle nh;
+
+//     // 创建一个 TF2 监听器
+//     tf2_ros::Buffer tf_buffer;
+//     tf2_ros::TransformListener tf_listener(tf_buffer);
+
+//     // 设置一个循环率
+//     ros::Rate rate(10.0);
+
+//     while (ros::ok())
+//     {
+//         try
+//         {
+//             // 获取从 base_link 到 Body_Link1 的变换
+//             geometry_msgs::TransformStamped transformStamped = tf_buffer.lookupTransform(
+//                 "Left_Arm_Link7",  // 目标坐标系
+//                 "base_link", // 源坐标系
+//                 ros::Time(0), // 获取最新的变换
+//                 ros::Duration(1.0) // 等待最大时长
+//             );
+
+//             // 打印变换信息
+//             ROS_INFO("Transform from base_link to Right_Arm_Link8:");
+//             ROS_INFO("Translation: x = %f, y = %f, z = %f",
+//                      transformStamped.transform.translation.x,
+//                      transformStamped.transform.translation.y,
+//                      transformStamped.transform.translation.z);
+//             ROS_INFO("Rotation: x = %f, y = %f, z = %f, w = %f",
+//                      transformStamped.transform.rotation.x,
+//                      transformStamped.transform.rotation.y,
+//                      transformStamped.transform.rotation.z,
+//                      transformStamped.transform.rotation.w);
+
+//         }
+//         catch (tf2::TransformException &ex)
+//         {
+//             ROS_WARN("%s", ex.what());
+//         }
+
+//         // 运行回调，处理其他ROS消息
+//         ros::spinOnce();
+//         rate.sleep();
+//     }
+
+//     return 0;
+// }
