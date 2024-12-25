@@ -1,0 +1,176 @@
+left_arm_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - Left_Arm_Joint1
+    - Left_Arm_Joint2
+    - Left_Arm_Joint3
+    - Left_Arm_Joint4
+    - Left_Arm_Joint5
+    - Left_Arm_Joint6
+    - Left_Arm_Joint7
+  gains:
+    Left_Arm_Joint1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Left_Arm_Joint2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Left_Arm_Joint3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Left_Arm_Joint4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Left_Arm_Joint5:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Left_Arm_Joint6:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Left_Arm_Joint7:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+right_arm_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - Right_Arm_Joint1
+    - Right_Arm_Joint2
+    - Right_Arm_Joint3
+    - Right_Arm_Joint4
+    - Right_Arm_Joint5
+    - Right_Arm_Joint6
+    - Right_Arm_Joint7
+  gains:
+    Right_Arm_Joint1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Right_Arm_Joint2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Right_Arm_Joint3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Right_Arm_Joint4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Right_Arm_Joint5:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Right_Arm_Joint6:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Right_Arm_Joint7:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+body_neck_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - Body_Joint1
+    - Body_Joint2
+    - Body_Joint3
+    - Body_Joint4
+    - Neck_Joint1
+    - Neck_Joint2
+  gains:
+    Body_Joint1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Body_Joint2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Body_Joint3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Body_Joint4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Neck_Joint1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Neck_Joint2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+body_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - Body_Joint1
+    - Body_Joint2
+    - Body_Joint3
+    - Body_Joint4
+  gains:
+    Body_Joint1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Body_Joint2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Body_Joint3:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Body_Joint4:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+neck_controller:
+  type: effort_controllers/JointTrajectoryController
+  joints:
+    - Neck_Joint1
+    - Neck_Joint2
+  gains:
+    Neck_Joint1:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    Neck_Joint2:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<launch>
+    
+  <rosparam file="$(find ymbot_d_ros_control)/config/ros_control.yaml" command="load"/>
+   
+  <param name="robot_description" textfile="$(find ymbot_d_description)/urdf/ymbot_d_description.urdf" />
+  
+  <node name="ymbot_d_ros_control_real" pkg="ymbot_d_ros_control" type="ymbot_d_ros_control_real" output="screen"/>
+  
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ymbot_d_ros_control)/rviz/rviz.rviz" required="true" /> -->
+    
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="
+          joints_state_publisher
+          left_arm_controller
+          right_arm_controller
+          body_neck_controller
+        "/>
+</launch>

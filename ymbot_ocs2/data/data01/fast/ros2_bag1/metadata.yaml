@@ -1,0 +1,29 @@
+rosbag2_bagfile_information:
+  compression_format: ''
+  compression_mode: ''
+  custom_data: {}
+  duration:
+    nanoseconds: 29801952914
+  files:
+  - duration:
+      nanoseconds: 29801952914
+    message_count: 1468
+    path: ros2_bag1.db3
+    starting_time:
+      nanoseconds_since_epoch: 1729856755553330378
+  message_count: 1468
+  relative_file_paths:
+  - ros2_bag1.db3
+  ros_distro: rosbags
+  starting_time:
+    nanoseconds_since_epoch: 1729856755553330378
+  storage_identifier: sqlite3
+  topics_with_message_count:
+  - message_count: 1468
+    topic_metadata:
+      name: /vr
+      offered_qos_profiles: ''
+      serialization_format: cdr
+      type: geometry_msgs/msg/Pose
+      type_description_hash: RIHS01_d501954e9476cea2996984e812054b68026ae0bfae789d9a10b23daf35cc90fa
+  version: 8

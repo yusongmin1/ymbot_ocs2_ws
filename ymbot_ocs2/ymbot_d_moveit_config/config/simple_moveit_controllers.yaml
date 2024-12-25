@@ -1,0 +1,71 @@
+controller_list:
+  - name: left_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Left_Arm_Joint1
+      - Left_Arm_Joint2
+      - Left_Arm_Joint3
+      - Left_Arm_Joint4
+      - Left_Arm_Joint5
+      - Left_Arm_Joint6
+      - Left_Arm_Joint7
+  - name: right_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Right_Arm_Joint1
+      - Right_Arm_Joint2
+      - Right_Arm_Joint3
+      - Right_Arm_Joint4
+      - Right_Arm_Joint5
+      - Right_Arm_Joint6
+      - Right_Arm_Joint7
+  - name: body_neck_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - Body_Joint1
+      - Body_Joint2
+      - Body_Joint3
+      - Body_Joint4
+      - Neck_Joint1
+      - Neck_Joint2
+  # - name: body_controller
+  #   action_ns: follow_joint_trajectory
+  #   type: FollowJointTrajectory
+  #   default: True
+  #   joints:
+  #     - Body_Joint1
+  #     - Body_Joint2
+  #     - Body_Joint3
+  #     - Body_Joint4
+  # - name: neck_controller
+  #   action_ns: follow_joint_trajectory
+  #   type: FollowJointTrajectory
+  #   default: True
+  #   joints:
+  #     - Neck_Joint1
+  #     - Neck_Joint2
+  # - name: arms_controller
+  #   action_ns: follow_joint_trajectory
+  #   type: FollowJointTrajectory
+  #   default: True
+  #   joints:
+  #     - Left_Arm_Joint1
+  #     - Left_Arm_Joint2
+  #     - Left_Arm_Joint3
+  #     - Left_Arm_Joint4
+  #     - Left_Arm_Joint5
+  #     - Left_Arm_Joint6
+  #     - Left_Arm_Joint7
+  #     - Right_Arm_Joint1
+  #     - Right_Arm_Joint2
+  #     - Right_Arm_Joint3
+  #     - Right_Arm_Joint4
+  #     - Right_Arm_Joint5
+  #     - Right_Arm_Joint6
+  #     - Right_Arm_Joint7

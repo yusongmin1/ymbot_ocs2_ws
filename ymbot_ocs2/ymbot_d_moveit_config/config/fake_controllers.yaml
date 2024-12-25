@@ -1,0 +1,64 @@
+controller_list:
+  - name: fake_left_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Left_Arm_Joint1
+      - Left_Arm_Joint2
+      - Left_Arm_Joint3
+      - Left_Arm_Joint4
+      - Left_Arm_Joint5
+      - Left_Arm_Joint6
+      - Left_Arm_Joint7
+  - name: fake_right_arm_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Right_Arm_Joint1
+      - Right_Arm_Joint2
+      - Right_Arm_Joint3
+      - Right_Arm_Joint4
+      - Right_Arm_Joint5
+      - Right_Arm_Joint6
+      - Right_Arm_Joint7
+  - name: fake_body_neck_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Body_Joint1
+      - Body_Joint2
+      - Body_Joint3
+      - Body_Joint4
+      - Neck_Joint1
+      - Neck_Joint2
+  - name: fake_body_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Body_Joint1
+      - Body_Joint2
+      - Body_Joint3
+      - Body_Joint4
+  - name: fake_neck_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Neck_Joint1
+      - Neck_Joint2
+  - name: fake_arms_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - Left_Arm_Joint1
+      - Left_Arm_Joint2
+      - Left_Arm_Joint3
+      - Left_Arm_Joint4
+      - Left_Arm_Joint5
+      - Left_Arm_Joint6
+      - Left_Arm_Joint7
+      - Right_Arm_Joint1
+      - Right_Arm_Joint2
+      - Right_Arm_Joint3
+      - Right_Arm_Joint4
+      - Right_Arm_Joint5
+      - Right_Arm_Joint6
+      - Right_Arm_Joint7
+initial:  # Define initial robot poses per group
+  - group: left_arm
+    pose: home
+  - group: right_arm
+    pose: home

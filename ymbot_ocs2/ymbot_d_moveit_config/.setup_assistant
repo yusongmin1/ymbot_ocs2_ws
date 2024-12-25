@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: ymbot_d_description
+    relative_path: urdf/ymbot_d_description.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/ymbot_d_description.srdf
+  CONFIG:
+    author_name: yusongmin
+    author_email: 1902219511@qq.com
+    generated_timestamp: 1733991609

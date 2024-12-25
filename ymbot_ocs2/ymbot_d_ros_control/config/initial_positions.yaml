@@ -1,0 +1,18 @@
+# mpc初始状态和ros_control接口的状态
+
+initial_positions:
+  Left_Arm_Joint1:  -0.4583
+  Left_Arm_Joint2:   0.3746
+  Left_Arm_Joint3:   0.5241
+  Left_Arm_Joint4:   0.1204
+  Left_Arm_Joint5:  -0.5028
+  Left_Arm_Joint6:  -0.5396
+  Left_Arm_Joint7:  -0.2679
+  Right_Arm_Joint1:  0.4583
+  Right_Arm_Joint2: -0.3746
+  Right_Arm_Joint3: -0.5241
+  Right_Arm_Joint4: -0.1204
+  Right_Arm_Joint5:  0.5028
+  Right_Arm_Joint6:  0.5396
+  Right_Arm_Joint7:  0.2679
+
