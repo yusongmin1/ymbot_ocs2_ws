@@ -16,3 +16,38 @@ initial_positions:
   Right_Arm_Joint6:  0.5396
   Right_Arm_Joint7:  0.2679
 
+# initial_positions:
+#   Left_Arm_Joint1:   0.2989
+#   Left_Arm_Joint2:   0.4869
+#   Left_Arm_Joint3:   0.1397
+#   Left_Arm_Joint4:  -0.5797
+#   Left_Arm_Joint5:  -0.6686
+#   Left_Arm_Joint6:  -0.5290
+#   Left_Arm_Joint7:  -0.0128
+#   Right_Arm_Joint1: -0.2989
+#   Right_Arm_Joint2: -0.4869
+#   Right_Arm_Joint3: -0.1397
+#   Right_Arm_Joint4:  0.5797
+#   Right_Arm_Joint5:  0.6686
+#   Right_Arm_Joint6:  0.5290
+#   Right_Arm_Joint7:  0.0128
+
+left_arm_start_position:
+  x:  0.406
+  y:  0.361
+  z:  0.475
+
+right_arm_start_position:
+  x:  0.406
+  y:  -0.361
+  z:  0.475
+
+# left_arm_start_position:
+#   x:  0.25246
+#   y:  0.37229
+#   z:  0.49721
+
+# right_arm_start_position:
+#   x:  0.25246
+#   y:  -0.37229
+#   z:  0.49721

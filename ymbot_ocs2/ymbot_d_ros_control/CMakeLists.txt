@@ -21,6 +21,9 @@ find_package(catkin REQUIRED COMPONENTS
   visualization_msgs
   geometry_msgs
   interactive_markers
+  moveit_core
+  moveit_ros_planning  
+  moveit_ros_planning_interface
 )
 
 ###################################
@@ -35,7 +38,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
 #  LIBRARIES ros_control_example
-  CATKIN_DEPENDS controller_manager roscpp rospy std_msgs std_srvs
+  CATKIN_DEPENDS controller_manager roscpp rospy std_msgs std_srvs moveit_core  moveit_ros_planning  moveit_ros_planning_interface
 #  DEPENDS system_lib
 )
 
@@ -68,3 +71,8 @@ target_link_libraries(disable_all_motors
   ${catkin_LIBRARIES} 
   ${ymbot_devices_driver_LIBRARIES}
 )
+
+
+# Target node
+add_executable(move_to_start_pose src/move_to_start_pose.cpp)
+target_link_libraries(move_to_start_pose ${catkin_LIBRARIES} ${ymbot_devices_driver_LIBRARIES})

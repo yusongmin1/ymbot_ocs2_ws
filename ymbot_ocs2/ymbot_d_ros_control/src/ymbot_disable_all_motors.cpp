@@ -31,6 +31,7 @@ void free_canables() {
 
 int main(int argc, char** argv)
 {
+    
     /* code */
        // 初始化电机对象，设定id，分组并且给每个电机设定所属的组号，设置角度偏差（与关节零位相关）
     for (int i = 0; i < joint_num; i++) {

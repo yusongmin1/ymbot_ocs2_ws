@@ -1,5 +1,5 @@
-#ifndef YMBOT_HW_INTERFACE
-#define YMBOT_HW_INTERFACE
+#ifndef YMBOT_HW_INTERFACE_REAL
+#define YMBOT_HW_INTERFACE_REAL
 #include <hardware_interface/joint_state_interface.h>
 #include <hardware_interface/joint_command_interface.h>
 #include <hardware_interface/robot_hw.h>

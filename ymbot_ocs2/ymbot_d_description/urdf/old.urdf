@@ -90,9 +90,9 @@
         xyz="0 0 0"
         rpy="0 0 0" />
       <geometry>
-        <!-- <mesh
-          filename="package://ymbot_d_description/meshes/Body_Link1.STL" /> -->
-          <cylinder radius="0.25" length="0.516" /> 
+        <mesh
+          filename="package://ymbot_d_description/meshes/Body_Link1.STL" />
+          <!-- <cylinder radius="0.25" length="0.516" />  -->
       </geometry>
       
     </collision>
