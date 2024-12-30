@@ -1,15 +1,14 @@
 #include "ymbot_devices_driver/ymbot_joint_eu.h"
-#include <ymbot_d_ros_control/ymobot_hardware_interface_sim.h>
 #include <vector>
-#include <ros/ros.h>
+#include<iostream>
+#include<cmath>
 using namespace std;
-
+#define joint_num 20
 // 设定电机组数
 int n_motor_group = 3;
 int channel = 0;
 vector<int> motors_id = 
-                    {
-                      31, 32, 33, 34, 35, 36, 37, 
+                    {31, 32, 33, 34, 35, 36, 37, 
                       41, 42, 43, 44, 45, 46, 47,
                       11, 12, 13, 14, 21, 22 };//左臂，右臂,上肢
 
@@ -21,19 +20,25 @@ vector<float> joints_offset_angle(joint_num);
 void free_canables() {
     for (int i = 0; i < n_motor_group; i++) {
         if (PLANET_SUCCESS != planet_freeDLL(i)) {
-            ROS_INFO_STREAM("Motor communication canable" << i << " abnormality......exit");
+            std::cout<<"Motor communication canable" << i << " abnormality......exit";
         }
         else {
-            ROS_ERROR_STREAM("Motor communication canable" << i << " closed successfully");
+            std::cout<<"Motor communication canable" << i << " closed successfully";
         }
     }
 }
 
-int main(int argc, char** argv)
+int main(int argc, char *argv[])
 {
-    
-    /* code */
-       // 初始化电机对象，设定id，分组并且给每个电机设定所属的组号，设置角度偏差（与关节零位相关）
+    // 初始化电机对象，设定id，分组并且给每个电机设定所属的组号，设置角度偏差（与关节零位相关）
+    for (int devIndex = 0; devIndex < 3; devIndex++) {
+    if (PLANET_SUCCESS != planet_initDLL(planet_DeviceType_Canable, devIndex,
+                                         channel, planet_Baudrate_1000)) {
+      cout << "Canable " << devIndex
+           << " communication initialization failed !!!" << endl;
+      return 0;
+    }
+  }
     for (int i = 0; i < joint_num; i++) {
         if (motors_id[i] > 10 && motors_id[i] < 30) {
             motors[i].dev_index = 0;
@@ -45,8 +50,8 @@ int main(int argc, char** argv)
             motors[i].dev_index = 2;
         }
         else {
-            ROS_ERROR_STREAM("There is an id number: "
-                             << motors[i].motor_id << " in the motor_id_array that does not match the actual motor.");
+            std::cout<<"There is an id number: "
+                             << motors[i].motor_id << " in the motor_id_array that does not match the actual motor.";
             free_canables();
             // return false;
         }
@@ -58,16 +63,15 @@ int main(int argc, char** argv)
     {
         if (motors[j].motor_disabled()) 
         {
-            ROS_INFO_STREAM("motor " << motors[j].motor_id << " disabled successfully");
+            std::cout<<"motor " << motors[j].motor_id << " disabled successfully";
         }
         else 
         {
-            ROS_ERROR_STREAM("motor " << motors[j].motor_id << " disabled failed");
+            std::cout<<"motor " << motors[j].motor_id << " disabled failed";
         }
         this_thread::sleep_for(chrono::milliseconds(500));
         
     }
-    ROS_ERROR_STREAM("Motor communication initialization failed.");
     free_canables();
     return 0;
 }

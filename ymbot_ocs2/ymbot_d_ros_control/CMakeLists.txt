@@ -76,3 +76,9 @@ target_link_libraries(disable_all_motors
 # Target node
 add_executable(move_to_start_pose src/move_to_start_pose.cpp)
 target_link_libraries(move_to_start_pose ${catkin_LIBRARIES} ${ymbot_devices_driver_LIBRARIES})
+
+add_executable(ymbot_d_ros_control_ocs2 src/ymbot_d_ros_control_ocs2.cpp) 
+target_link_libraries(ymbot_d_ros_control_ocs2
+  ${catkin_LIBRARIES} 
+  ${ymbot_devices_driver_LIBRARIES}
+)
