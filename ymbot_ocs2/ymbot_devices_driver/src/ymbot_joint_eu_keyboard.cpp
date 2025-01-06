@@ -20,11 +20,11 @@ std::atomic<char> key(0);
 
 // int id_array[] = {31, 32, 33, 34, 35, 36, 37};
 
-// int id_array[] = {41, 42, 43, 44, 45, 46, 47};
+int id_array[] = {41, 42, 43, 44, 45, 46, 47};
 
 // int id_array[] = {11, 12, 13, 14, 21, 22};
 
-int id_array[] = {65};
+// int id_array[] = {65};
 
 
 // int id_array[] = {35};
@@ -33,7 +33,7 @@ using namespace std;
 
 int MotorFunction() {
     /**************************************motors****************************************/
-    int devIndex = 0;
+    int devIndex = 2;
     int channel = 0;
     int n_motors = sizeof(id_array) / sizeof(id_array[0]);
     vector<YmbotJointEu> motor(n_motors);

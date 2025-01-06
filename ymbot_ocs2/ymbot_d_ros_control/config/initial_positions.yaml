@@ -43,11 +43,11 @@ right_arm_start_position:
   z:  0.475
 
 # left_arm_start_position:
-#   x:  0.25246
-#   y:  0.37229
-#   z:  0.49721
+#   x:  0.41772
+#   y:  0.39226
+#   z:  1.0798
 
 # right_arm_start_position:
-#   x:  0.25246
-#   y:  -0.37229
-#   z:  0.49721
+#   x:  0.4429
+#   y:  -0.35224
+#   z:  1.0816

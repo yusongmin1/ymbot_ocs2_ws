@@ -5,10 +5,10 @@
   <rosparam file="$(find ymbot_d_ros_control)/config/initial_positions.yaml" command="load"/>
 
   <!-- 将机械臂移动到mpc计算的初始位置 -->
-  <node name="move_to_start_pose" pkg="ymbot_d_ros_control" type="move_to_start_pose" output="screen"/>
+  <!-- <node name="move_to_start_pose" pkg="ymbot_d_ros_control" type="move_to_start_pose" output="screen"/> -->
+  <include file="$(find ymbot_d_moveit_config)/launch/demo_real.launch" />
 
-
-  <param name="robot_description" textfile="$(find ymbot_d_description)/urdf/ymbot_d_description.urdf" />
+  <!-- <param name="robot_description" textfile="$(find ymbot_d_description)/urdf/ymbot_d_description.urdf" /> -->
   <node name="ymbot_d_ros_control_real" pkg="ymbot_d_ros_control" type="ymbot_d_ros_control_real" output="screen"/>
   
   

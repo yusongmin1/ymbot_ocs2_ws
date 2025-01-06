@@ -185,13 +185,13 @@ void YMBOTDHW::read() {//头不动
 }
 
 void YMBOTDHW::write(ros::Duration elapsed_time) {
-    // joint_position_=joint_position_command_;
-    // for (int i = 0; i < 14; i++)
-    // {
-    //     // int i = motor_index[k];
-    //     motors[i].target_position=(joint_position_command_[i] + motors[i].joint_offset_radian) / M_PI * 180.0;;
-    //     planet_quick_setTargetPosition(motors[i].dev_index, motors[i].motor_id, motors[i].target_position);
-    // }
+    joint_position_=joint_position_command_;
+    for (int i = 0; i < 14; i++)
+    {
+        // int i = motor_index[k];
+        motors[i].target_position=(joint_position_command_[i] + motors[i].joint_offset_radian) / M_PI * 180.0;;
+        planet_quick_setTargetPosition(motors[i].dev_index, motors[i].motor_id, motors[i].target_position);
+    }
 }
 
 int main(int argc, char** argv)

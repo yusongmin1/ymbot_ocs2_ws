@@ -14,7 +14,6 @@ vector<int> motors_id = {31, 32, 33, 34, 35, 36, 37,
 
 vector<YmbotJointEu> motors(joint_num);
 vector<string> joints_name(joint_num);
-vector<float> joints_offset_angle(joint_num);
 
 // 电机通讯异常后的退出函数
 void free_canables() {
@@ -205,6 +204,11 @@ void YMBOTDHW::init() {
         joint_position_[i]=motors[i].present_joint_radian;
         joint_position_command_[i]=motors[i].present_joint_radian;
     }
+    for(int i=14;i<20;i++)
+    {
+        joint_position_[i]=0;
+        joint_position_command_[i]=0;
+    }
     ROS_INFO_STREAM("All motors initialized successfully");
 }
 
@@ -226,12 +230,14 @@ void YMBOTDHW::read() {//头不动
 
 void YMBOTDHW::write(ros::Duration elapsed_time) {
     // joint_position_=joint_position_command_;
-    for (int i = 0; i < 14; i++)
+    for (int i = 0; i < 7; i++)
     {
         joint_position_command_[i]=shared_mem[i+14];
+        // std::cout<<joint_position_command_[i]<<" ";
         motors[i].target_position=(joint_position_command_[i] + motors[i].joint_offset_radian) / M_PI * 180.0;;
         planet_quick_setTargetPosition(motors[i].dev_index, motors[i].motor_id, motors[i].target_position);
     }
+    // std::cout<<"\n";
 }
 
 
